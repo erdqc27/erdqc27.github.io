@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Coolvetica', sans-serif;
     background: linear-gradient(#A1A1A1, #1A1A1A);
     color: white;
 }
@@ -17,22 +17,6 @@ h1 {
 
 p {
     font-size: 1.2em;
-}
-
-main {
-    padding: 20px;
-}
-
-.portfolio {
-    max-width: 800px;
-    margin: auto;
-}
-
-.project {
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid white;
-    border-radius: 5px;
 }
 
 footer {
