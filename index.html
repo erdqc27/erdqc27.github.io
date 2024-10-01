@@ -8,7 +8,8 @@
     <style>
         body {
             margin: 0;
-            background: linear-gradient(#A1A1A1, #1A1A1A); /* Gradient background */
+            background-image: url('https://frutiger-aero.org/img/frutiger-aero-6.webp'); /* Image background */
+            background-size: cover; /* Cover the entire viewport */
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -18,7 +19,7 @@
         .container {
             background-color: rgba(0, 0, 0, 0.6); /* Black with 60% opacity */
             border-radius: 20px;
-            padding: 60px; /* Increased padding */
+            padding: 78px; /* Increased padding by 30% */
             text-align: center;
             max-width: 90%; /* Increased width */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
@@ -43,13 +44,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px 30px; /* Increased padding for larger buttons */
+            padding: 15px 30px; /* Consistent padding */
             border-radius: 20px;
             color: #ffffff;
             text-decoration: none;
             font-family: 'Roboto', sans-serif;
             font-size: 1.2em; /* Slightly increased font size */
             transition: box-shadow 0.3s ease;
+            width: 200px; /* Set fixed width for equal size */
             position: absolute; /* For positioning */
         }
         .instagram {
