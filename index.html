@@ -28,9 +28,14 @@
     </style>
 </head>
 <body>
-    <div class="date">Launching on: January 1, 2025</div>
+    <div class="date" id="currentDate"></div>
     <div class="content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
+    
+    <script>
+        const now = new Date();
+        document.getElementById('currentDate').innerText = `Current Date and Time: ${now.toLocaleString()}`;
+    </script>
 </body>
 </html>
