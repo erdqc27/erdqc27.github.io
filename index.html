@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coming Soon</title>
+    <title>My Information</title>
     <style>
         body {
             display: flex;
@@ -12,30 +12,25 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #1A1A1A;
-            color: white;
+            background-color: #f0f0f0;
             font-family: Arial, sans-serif;
+            color: #333;
             text-align: center;
         }
-        .date {
-            font-size: 1.5em;
-            margin-bottom: 20px;
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
         }
-        .content {
-            font-size: 1.2em;
-            color: #ccc;
+        p {
+            font-size: 1em;
+            margin: 5px 0;
         }
     </style>
 </head>
 <body>
-    <div class="date" id="currentDate"></div>
-    <div class="content">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    
-    <script>
-        const now = new Date();
-        document.getElementById('currentDate').innerText = `Current Date and Time: ${now.toLocaleString()}`;
-    </script>
+    <h1>Your Name</h1>
+    <p>Brief description about yourself.</p>
+    <p>Email: your.email@example.com</p>
+    <p>Phone: test</p>
 </body>
 </html>
