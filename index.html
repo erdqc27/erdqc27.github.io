@@ -19,7 +19,7 @@
         .container {
             background-color: rgba(0, 0, 0, 0.6); /* Black with 60% opacity */
             border-radius: 20px;
-            padding: 78px; /* Increased padding by 30% */
+            padding: 100px; /* Increased padding for a larger rectangular area */
             text-align: center;
             max-width: 90%; /* Increased width */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
@@ -73,6 +73,9 @@
             width: 30px; /* Increased icon size for better visibility */
             margin-right: 10px; /* Space between icon and text */
         }
+        .spotify {
+            margin: 20px 0; /* Margin for spacing */
+        }
     </style>
 </head>
 <body>
@@ -81,6 +84,12 @@
         <p>Brief description about yourself.</p>
         <p>Email: your.email@example.com</p>
         <p>Phone: (123) 456-7890</p>
+        
+        <!-- Spotify Embed -->
+        <div class="spotify">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/2norl4Q0EjACN5kIshyP7k?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        
         <div style="display: flex; justify-content: space-between; width: 100%;">
             <a href="https://www.instagram.com/erdqc27/" class="button instagram">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="icon">Instagram
