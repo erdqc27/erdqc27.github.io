@@ -6,31 +6,40 @@
     <title>My Information</title>
     <style>
         body {
+            margin: 0;
+            background-image: url('https://www.thebestviewpoints.com/wp-content/uploads/2024/05/NOR7882-Pano-Edit-2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            color: #333;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 40px;
             text-align: center;
+            max-width: 80%;
         }
         h1 {
             font-size: 2em;
             margin-bottom: 10px;
+            color: #333;
         }
         p {
             font-size: 1em;
             margin: 5px 0;
+            color: #555;
         }
     </style>
 </head>
 <body>
-    <h1>Your Name</h1>
-    <p>Brief description about yourself.</p>
-    <p>Email: your.email@example.com</p>
-    <p>Phone: test</p>
+    <div class="container">
+        <h1>Your Name</h1>
+        <p>Brief description about yourself.</p>
+        <p>Email: your.email@example.com</p>
+        <p>Phone: (123) 456-7890</p>
+    </div>
 </body>
 </html>
