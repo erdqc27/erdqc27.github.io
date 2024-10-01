@@ -8,8 +8,9 @@
     <style>
         body {
             margin: 0;
-            background-image: url('https://media.discordapp.net/attachments/1275822977136721930/1290769607833026581/Windows_11_Wallpaper_10.jpg?ex=66fdaa5f&is=66fc58df&hm=51540bc599271e95ffeb88872686cfe0559016010febec5726885f603cd913a2&=&format=webp&width=756&height=473'); /* Image background */
+            background-image: url('https://media.discordapp.net/attachments/1275822977136721930/1290769607833026581/Windows_11_Wallpaper_10.jpg'); /* Improved image background */
             background-size: cover; /* Cover the entire viewport */
+            background-position: center; /* Center the image */
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -21,7 +22,7 @@
             border-radius: 40px; /* Increased rounded corners */
             padding: 80px 50px; /* Increased padding for a larger rectangular area */
             text-align: center;
-            max-width: 130%; /* Increased width */
+            max-width: 90%; /* Adjusted width */
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
         }
         h1 {
@@ -62,6 +63,10 @@
         .discord {
             background-color: #5865F2; /* Discord color */
         }
+        .time-button {
+            background-color: #4CAF50; /* Green background for time button */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
         .button:hover {
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
         }
@@ -78,8 +83,11 @@
 <body>
     <div class="container">
         <h1>erdqc's basic website.</h1>
-        <p>idk i like tech stuff</p>
-        
+        <p>idk I like tech stuff</p>
+        <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')" style="cursor: pointer;">
+            Loading time...
+        </p>
+
         <div style="display: flex; justify-content: space-between; width: 100%;">
             <a href="https://www.instagram.com/erdqc27/" class="button instagram">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="icon">Instagram
@@ -89,5 +97,17 @@
             </a>
         </div>
     </div>
+
+    <script>
+        // Function to display the current date and time
+        function updateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            document.getElementById('current-time').textContent = now.toLocaleString('en-US', options);
+        }
+        // Update the time every second
+        setInterval(updateTime, 1000);
+        updateTime(); // Initial call
+    </script>
 </body>
 </html>
