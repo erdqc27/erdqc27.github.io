@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Information</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -22,14 +23,24 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
         }
         h1 {
+            font-family: 'Roboto', sans-serif; /* Modern font */
             font-size: 2.5em; /* Increased font size */
             margin-bottom: 10px;
             color: #fff; /* White text */
+            background: linear-gradient(90deg, #ffffff, #e0e0e0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: sparkle 1.5s infinite alternate;
         }
         p {
+            font-family: 'Roboto', sans-serif; /* Modern font */
             font-size: 1.2em; /* Increased font size */
             margin: 5px 0;
             color: #ddd; /* Light gray text */
+        }
+        @keyframes sparkle {
+            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); }
+            100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
         }
     </style>
 </head>
