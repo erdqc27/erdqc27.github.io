@@ -38,6 +38,21 @@
             margin: 5px 0;
             color: #ddd; /* Light gray text */
         }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            border-radius: 20px;
+            background-color: #ffffff;
+            color: #1A1A1A;
+            text-decoration: none;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1em;
+            transition: box-shadow 0.3s ease;
+        }
+        .button:hover {
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
+        }
         @keyframes sparkle {
             0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); }
             100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
@@ -50,6 +65,8 @@
         <p>Brief description about yourself.</p>
         <p>Email: your.email@example.com</p>
         <p>Phone: (123) 456-7890</p>
+        <a href="https://www.instagram.com/erdqc27/" class="button">Instagram</a>
+        <a href="https://discord.gg/AffrBjs8h7" class="button">Discord</a>
     </div>
 </body>
 </html>
