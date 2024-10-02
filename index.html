@@ -8,78 +8,82 @@
     <style>
         body {
             margin: 0;
-            background-color: #24292e; /* Set background color */
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative; /* For positioning buttons */
+            position: relative;
+            transition: background-color 0.5s;
         }
         .container {
-            background-color: rgba(0, 0, 0, 0.6); /* Black with 60% opacity */
-            border-radius: 40px; /* Increased rounded corners */
-            padding: 80px 50px; /* Increased padding for a larger rectangular area */
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 40px;
+            padding: 80px 50px;
             text-align: center;
-            max-width: 90%; /* Adjusted width */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
+            max-width: 90%;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.5s;
         }
-        h1 {
-            font-family: 'Roboto', sans-serif; /* Modern font */
-            font-size: 2.5em; /* Increased font size */
-            margin-bottom: 10px;
-            color: #fff; /* White text */
-            background: linear-gradient(90deg, #ffffff, #e0e0e0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: sparkle 1.5s infinite alternate;
-        }
-        p {
-            font-family: 'Roboto', sans-serif; /* Modern font */
-            font-size: 1.2em; /* Increased font size */
-            margin: 5px 0;
-            color: #ddd; /* Light gray text */
+        h1, p {
+            font-family: 'Roboto', sans-serif;
+            color: #fff;
+            transition: color 0.5s;
         }
         .button {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px; /* Uniform padding */
+            padding: 15px;
             border-radius: 20px;
             color: #ffffff;
             text-decoration: none;
             font-family: 'Roboto', sans-serif;
-            font-size: 1.2em; /* Slightly increased font size */
+            font-size: 1.2em;
             transition: box-shadow 0.3s ease;
-            width: 200px; /* Fixed width for equal size */
-            height: 60px; /* Fixed height for equal size */
-            margin: 10px; /* Margin to separate buttons */
-            box-sizing: border-box; /* Include padding in width/height calculations */
+            width: 200px;
+            height: 60px;
+            margin: 10px;
         }
         .instagram {
             background: linear-gradient(45deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040);
         }
         .discord {
-            background-color: #5865F2; /* Discord color */
+            background-color: #5865F2;
         }
         .time-button {
-            cursor: pointer; /* Pointer cursor on hover */
-            color: #ddd; /* Light gray text */
-            font-size: 1.2em; /* Match font size with buttons */
+            cursor: pointer;
+            color: #ddd;
+            font-size: 1.2em;
         }
         .button:hover {
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
         }
-        @keyframes sparkle {
-            0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.8); }
-            100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1); }
+        #theme-toggle {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
         }
-        .icon {
-            width: 30px; /* Increased icon size for better visibility */
-            margin-right: 10px; /* Space between icon and text */
+        body.light {
+            background-color: #f0f0f0;
+        }
+        body.light .container {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        body.light h1, body.light p {
+            color: #000;
+        }
+        body.light .button {
+            color: #000;
         }
     </style>
 </head>
-<body>
+<body class="dark">
     <div class="container">
         <h1>erdqc's basic website.</h1>
         <p>idk I like tech stuff</p>
@@ -97,16 +101,21 @@
         </div>
     </div>
 
+    <button id="theme-toggle">Toggle Theme</button>
+
     <script>
-        // Function to display the current date and time
         function updateTime() {
             const now = new Date();
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
             document.getElementById('current-time').textContent = now.toLocaleString('en-US', options);
         }
-        // Update the time every second
+
         setInterval(updateTime, 1000);
-        updateTime(); // Initial call
+        updateTime();
+
+        document.getElementById('theme-toggle').onclick = function() {
+            document.body.classList.toggle('light');
+        };
     </script>
 </body>
 </html>
