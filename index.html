@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Information</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
@@ -18,19 +18,19 @@
         .container {
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 40px;
-            padding: 80px 50px;
+            padding: 20px 50px; /* Adjusted padding for playlist */
             text-align: center;
             max-width: 90%;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
         h1 {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Syne', sans-serif;
             font-size: 2.5em;
-            margin-bottom: 10px;
+            margin: 10px 0; /* Adjusted margin */
             color: #fff; /* White text */
         }
         p {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Syne', sans-serif;
             font-size: 1.2em;
             margin: 5px 0;
             color: #ddd;
@@ -43,7 +43,7 @@
             border-radius: 20px;
             color: #ffffff;
             text-decoration: none;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Syne', sans-serif;
             font-size: 1.2em;
             width: 200px;
             height: 60px;
@@ -66,21 +66,12 @@
             color: #ddd;
             font-size: 1.2em;
         }
-        .tab {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: rgba(255, 255, 255, 0.1);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 1em;
-        }
     </style>
 </head>
 <body>
     <div class="container">
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3pppwfuUU9qX2tr6u7Jrnz?utm_source=generator&theme=0" width="90%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        
         <h1>erdqc's basic website.</h1>
         <p>idk I like tech stuff</p>
         <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')">
@@ -96,8 +87,6 @@
             </a>
         </div>
     </div>
-
-    <div class="tab">My Custom Tab</div>
 
     <script>
         function updateTime() {
