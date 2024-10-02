@@ -13,7 +13,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative; /* For positioning buttons */
+            position: relative;
         }
         .container {
             background-color: rgba(0, 0, 0, 0.6);
@@ -28,7 +28,6 @@
             font-size: 2.5em;
             margin-bottom: 10px;
             color: #fff; /* White text */
-            background: none; /* Remove glow */
         }
         p {
             font-family: 'Roboto', sans-serif;
@@ -50,13 +49,17 @@
             height: 60px;
             margin: 10px;
             box-sizing: border-box;
-            transition: none; /* Remove glow on hover */
         }
         .instagram {
             background: linear-gradient(45deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040);
         }
         .discord {
             background-color: #5865F2;
+        }
+        .icon {
+            width: 24px; /* Adjusted icon size */
+            height: 24px; /* Keep icon size consistent */
+            margin-right: 10px; /* Space between icon and text */
         }
         .time-button {
             cursor: pointer;
