@@ -8,12 +8,12 @@
     <style>
         body {
             margin: 0;
+            background-color: #000; /* Set background color to pure black */
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
-            transition: background-color 0.5s;
+            position: relative; /* For positioning buttons */
         }
         .container {
             background-color: rgba(0, 0, 0, 0.6);
@@ -22,12 +22,19 @@
             text-align: center;
             max-width: 90%;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            transition: background-color 0.5s;
         }
-        h1, p {
+        h1 {
             font-family: 'Roboto', sans-serif;
-            color: #fff;
-            transition: color 0.5s;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: #fff; /* White text */
+            background: none; /* Remove glow */
+        }
+        p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+            margin: 5px 0;
+            color: #ddd;
         }
         .button {
             display: flex;
@@ -39,10 +46,11 @@
             text-decoration: none;
             font-family: 'Roboto', sans-serif;
             font-size: 1.2em;
-            transition: box-shadow 0.3s ease;
             width: 200px;
             height: 60px;
             margin: 10px;
+            box-sizing: border-box;
+            transition: none; /* Remove glow on hover */
         }
         .instagram {
             background: linear-gradient(45deg, #405DE6, #5B51D8, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040);
@@ -55,35 +63,20 @@
             color: #ddd;
             font-size: 1.2em;
         }
-        .button:hover {
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.6);
-        }
-        #theme-toggle {
+        .tab {
             position: absolute;
             bottom: 20px;
-            left: 20px;
-            background-color: rgba(255, 255, 255, 0.8);
-            color: black;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        body.light {
-            background-color: #f0f0f0;
-        }
-        body.light .container {
-            background-color: rgba(255, 255, 255, 0.9);
-        }
-        body.light h1, body.light p {
-            color: #000;
-        }
-        body.light .button {
-            color: #000;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 1em;
         }
     </style>
 </head>
-<body class="dark">
+<body>
     <div class="container">
         <h1>erdqc's basic website.</h1>
         <p>idk I like tech stuff</p>
@@ -101,7 +94,7 @@
         </div>
     </div>
 
-    <button id="theme-toggle">Toggle Theme</button>
+    <div class="tab">My Custom Tab</div>
 
     <script>
         function updateTime() {
@@ -109,13 +102,8 @@
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
             document.getElementById('current-time').textContent = now.toLocaleString('en-US', options);
         }
-
         setInterval(updateTime, 1000);
         updateTime();
-
-        document.getElementById('theme-toggle').onclick = function() {
-            document.body.classList.toggle('light');
-        };
     </script>
 </body>
 </html>
