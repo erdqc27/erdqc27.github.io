@@ -16,7 +16,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            cursor: url('https://cdn.discordapp.com/attachments/1275822977136721930/1291520084077973565/pointer.cur?ex=6700654f&is=66ff13cf&hm=dd49b3a6a0615137b90424cdd4658ea79602b98871c4c2fd7038814b65fa964b'), auto; /* Custom cursor */
+            cursor: auto; /* Normal cursor */
         }
         .container {
             background-color: rgba(0, 0, 0, 0.6);
@@ -33,20 +33,11 @@
             font-size: 2.5em;
             margin: 10px 0;
             color: #fff;
-            position: relative; /* Required for sparkle effect */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Glowing effect */
+            transition: text-shadow 0.3s;
         }
-        .sparkle {
-            position: absolute;
-            width: 0.5em;
-            height: 0.5em;
-            background: radial-gradient(circle, #fff, rgba(255, 255, 255, 0));
-            border-radius: 50%;
-            animation: sparkle 1.5s infinite;
-        }
-        @keyframes sparkle {
-            0% { transform: scale(0); opacity: 1; }
-            50% { transform: scale(1); opacity: 0; }
-            100% { transform: scale(0); opacity: 1; }
+        h1:hover {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.5);
         }
         p {
             font-family: 'Syne', sans-serif;
@@ -68,6 +59,10 @@
             height: 60px;
             margin: 10px;
             box-sizing: border-box;
+            transition: box-shadow 0.3s; /* Transition for glow */
+        }
+        .button:hover {
+            box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.5); /* Glowing effect */
         }
         .instagram, .discord {
             background-color: #FFFFFF;
@@ -109,16 +104,6 @@
             const now = new Date();
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
             document.getElementById('current-time').textContent = now.toLocaleString('en-US', options);
-        }
-        
-        // Sparkle effect for the "erdqc" text
-        const sparkleText = document.getElementById('sparkle-text');
-        for (let i = 0; i < 10; i++) {
-            const sparkle = document.createElement('div');
-            sparkle.classList.add('sparkle');
-            sparkle.style.top = Math.random() * 100 + '%';
-            sparkle.style.left = Math.random() * 100 + '%';
-            sparkleText.appendChild(sparkle);
         }
 
         setInterval(updateTime, 1000);
