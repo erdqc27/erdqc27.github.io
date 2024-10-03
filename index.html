@@ -87,15 +87,12 @@
             width: 2px;
             height: 10px;
             bottom: 100%; /* Start above the screen */
-            animation: fall linear infinite;
+            animation: fall linear forwards;
         }
 
         @keyframes fall {
-            0% {
-                transform: translateY(0) translateX(0);
-            }
-            100% {
-                transform: translateY(100vh) translateX(calc(-50vw + (Math.random() * 100vw))); /* Slide sideways */
+            to {
+                transform: translateY(100vh) translateX(-50vw); /* Adjust this for sideways motion */
             }
         }
     </style>
@@ -135,6 +132,7 @@
             drop.classList.add('drop');
             drop.style.left = Math.random() * 100 + 'vw'; // Random horizontal start position
             drop.style.animationDuration = (Math.random() * 1 + 0.5) + 's'; // Random speed
+            drop.style.transform = `translateX(${Math.random() * 100 - 50}vw)`; // Random sideways motion
             rain.appendChild(drop);
             drop.addEventListener('animationend', () => {
                 drop.remove(); // Remove the drop after it falls
