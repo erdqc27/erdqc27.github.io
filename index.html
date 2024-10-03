@@ -92,7 +92,7 @@
 
         @keyframes fall {
             to {
-                transform: translateY(100vh);
+                transform: translateY(100vh) translateX(calc(-50vw + (Math.random() * 100vw))); /* Slide sideways */
             }
         }
     </style>
@@ -130,8 +130,8 @@
             const rain = document.querySelector('.rain');
             const drop = document.createElement('div');
             drop.classList.add('drop');
-            drop.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-            drop.style.animationDuration = Math.random() * 1 + 0.5 + 's'; // Random speed
+            drop.style.left = Math.random() * 100 + 'vw'; // Random horizontal start position
+            drop.style.animationDuration = (Math.random() * 1 + 0.5) + 's'; // Random speed
             rain.appendChild(drop);
             drop.addEventListener('animationend', () => {
                 drop.remove(); // Remove the drop after it falls
