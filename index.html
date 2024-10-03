@@ -15,7 +15,8 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            overflow: hidden; /* Prevent scroll bars */
+            overflow: hidden;
+            cursor: url('https://cdn.discordapp.com/attachments/1275822977136721930/1291520084077973565/pointer.cur?ex=6700654f&is=66ff13cf&hm=dd49b3a6a0615137b90424cdd4658ea79602b98871c4c2fd7038814b65fa964b'), auto; /* Custom cursor */
         }
         .container {
             background-color: rgba(0, 0, 0, 0.6);
@@ -24,14 +25,28 @@
             text-align: center;
             max-width: 90%;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            position: relative; /* Make container relative for z-index */
-            z-index: 1; /* Bring container above rain */
+            position: relative;
+            z-index: 1;
         }
         h1 {
             font-family: 'Syne', sans-serif;
             font-size: 2.5em;
             margin: 10px 0;
             color: #fff;
+            position: relative; /* Required for sparkle effect */
+        }
+        .sparkle {
+            position: absolute;
+            width: 0.5em;
+            height: 0.5em;
+            background: radial-gradient(circle, #fff, rgba(255, 255, 255, 0));
+            border-radius: 50%;
+            animation: sparkle 1.5s infinite;
+        }
+        @keyframes sparkle {
+            0% { transform: scale(0); opacity: 1; }
+            50% { transform: scale(1); opacity: 0; }
+            100% { transform: scale(0); opacity: 1; }
         }
         p {
             font-family: 'Syne', sans-serif;
@@ -54,10 +69,7 @@
             margin: 10px;
             box-sizing: border-box;
         }
-        .instagram {
-            background-color: #FFFFFF;
-        }
-        .discord {
+        .instagram, .discord {
             background-color: #FFFFFF;
         }
         .icon {
@@ -70,40 +82,13 @@
             color: #ddd;
             font-size: 1.2em;
         }
-
-        /* Raining Effect */
-        .rain {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none; /* Prevent interactions with rain */
-            overflow: hidden;
-        }
-        .drop {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.8);
-            width: 2px;
-            height: 10px;
-            bottom: 100%; /* Start above the screen */
-            animation: fall linear forwards;
-        }
-
-        @keyframes fall {
-            to {
-                transform: translateY(100vh) translateX(-50vw); /* Adjust this for sideways motion */
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="rain"></div>
-    
     <div class="container">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3pppwfuUU9qX2tr6u7Jrnz?utm_source=generator&theme=0" width="90%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         
-        <h1>erdqc</h1>
+        <h1 id="sparkle-text">erdqc</h1>
         <p>15 y.o beginner dev.</p>
         <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')">
             Loading time...
@@ -126,20 +111,16 @@
             document.getElementById('current-time').textContent = now.toLocaleString('en-US', options);
         }
         
-        function createRainDrop() {
-            const rain = document.querySelector('.rain');
-            const drop = document.createElement('div');
-            drop.classList.add('drop');
-            drop.style.left = Math.random() * 100 + 'vw'; // Random horizontal start position
-            drop.style.animationDuration = (Math.random() * 1 + 0.5) + 's'; // Random speed
-            drop.style.transform = `translateX(${Math.random() * 100 - 50}vw)`; // Random sideways motion
-            rain.appendChild(drop);
-            drop.addEventListener('animationend', () => {
-                drop.remove(); // Remove the drop after it falls
-            });
+        // Sparkle effect for the "erdqc" text
+        const sparkleText = document.getElementById('sparkle-text');
+        for (let i = 0; i < 10; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkleText.appendChild(sparkle);
         }
 
-        setInterval(createRainDrop, 150); // Create a new raindrop every 150ms
         setInterval(updateTime, 1000);
         updateTime();
     </script>
