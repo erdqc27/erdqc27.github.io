@@ -33,11 +33,7 @@
             font-size: 2.5em;
             margin: 10px 0;
             color: #fff;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Glowing effect */
             transition: text-shadow 0.3s;
-        }
-        h1:hover {
-            text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 30px rgba(255, 255, 255, 0.5);
         }
         p {
             font-family: 'Syne', sans-serif;
@@ -77,13 +73,19 @@
             color: #ddd;
             font-size: 1.2em;
         }
+        .email-link {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #ddd;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3pppwfuUU9qX2tr6u7Jrnz?utm_source=generator&theme=0" width="90%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         
-        <h1 id="sparkle-text">erdqc</h1>
+        <h1>erdqc</h1>
         <p>15 y.o beginner dev.</p>
         <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')">
             Loading time...
@@ -97,6 +99,9 @@
                 <img src="https://media.discordapp.net/attachments/1275822977136721930/1291075196085604362/discord_5968898.png?ex=66fec6f9&is=66fd7579&hm=f67fafd021475a824e8684775eaecfae528e0c648a62151d81680cf24f1321bd&=&format=webp&quality=lossless&width=473&height=473" alt="Discord" class="icon">Discord
             </a>
         </div>
+
+        <!-- Email link added here -->
+        <a href="mailto:contracterdqc@gmail.com" class="email-link">contracterdqc@gmail.com</a>
     </div>
 
     <script>
