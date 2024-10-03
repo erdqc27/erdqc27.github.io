@@ -73,11 +73,15 @@
             color: #ddd;
             font-size: 1.2em;
         }
-        .email-link {
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #ddd;
-            text-decoration: none;
+        .image-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .side-image {
+            width: 2.5em; /* Adjust size to match text */
+            height: 2.5em; /* Adjust size to match text */
+            margin: 0 10px; /* Space between text and images */
         }
     </style>
 </head>
@@ -85,7 +89,12 @@
     <div class="container">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3pppwfuUU9qX2tr6u7Jrnz?utm_source=generator&theme=0" width="90%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         
-        <h1>erdqc</h1>
+        <div class="image-container">
+            <img src="https://media.discordapp.net/attachments/1275826073384829003/1291526073384829003/Adsz3.png?ex=67006ae3&is=66ff1963&hm=283aa5d8067a013a8427916f14650ac8abb8fe93ee1ec8edb76b9641a5c98975&=&format=webp&quality=lossless&width=473&height=473" alt="Side Image" class="side-image">
+            <h1>erdqc</h1>
+            <img src="https://media.discordapp.net/attachments/1275826073384829003/1291526073384829003/Adsz3.png?ex=67006ae3&is=66ff1963&hm=283aa5d8067a013a8427916f14650ac8abb8fe93ee1ec8edb76b9641a5c98975&=&format=webp&quality=lossless&width=473&height=473" alt="Side Image" class="side-image">
+        </div>
+
         <p>15 y.o beginner dev.</p>
         <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')">
             Loading time...
@@ -99,9 +108,6 @@
                 <img src="https://media.discordapp.net/attachments/1275822977136721930/1291075196085604362/discord_5968898.png?ex=66fec6f9&is=66fd7579&hm=f67fafd021475a824e8684775eaecfae528e0c648a62151d81680cf24f1321bd&=&format=webp&quality=lossless&width=473&height=473" alt="Discord" class="icon">Discord
             </a>
         </div>
-
-        <!-- Email link added here -->
-        <a href="mailto:contracterdqc@gmail.com" class="email-link">contracterdqc@gmail.com</a>
     </div>
 
     <script>
