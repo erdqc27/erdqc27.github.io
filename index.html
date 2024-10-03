@@ -9,26 +9,29 @@
     <style>
         body {
             margin: 0;
-            background-color: #000; /* Set background color to pure black */
+            background-color: #000;
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
+            overflow: hidden; /* Prevent scroll bars */
         }
         .container {
             background-color: rgba(0, 0, 0, 0.6);
             border-radius: 40px;
-            padding: 20px 50px; /* Adjusted padding for playlist */
+            padding: 20px 50px;
             text-align: center;
             max-width: 90%;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative; /* Make container relative for z-index */
+            z-index: 1; /* Bring container above rain */
         }
         h1 {
             font-family: 'Syne', sans-serif;
             font-size: 2.5em;
-            margin: 10px 0; /* Adjusted margin */
-            color: #fff; /* White text */
+            margin: 10px 0;
+            color: #fff;
         }
         p {
             font-family: 'Syne', sans-serif;
@@ -42,7 +45,7 @@
             justify-content: center;
             padding: 15px;
             border-radius: 20px;
-            color: #000; /* Changed text color to black */
+            color: #000;
             text-decoration: none;
             font-family: 'Syne', sans-serif;
             font-size: 1.2em;
@@ -58,18 +61,45 @@
             background-color: #FFFFFF;
         }
         .icon {
-            width: 24px; /* Adjusted icon size */
-            height: 24px; /* Keep icon size consistent */
-            margin-right: 10px; /* Space between icon and text */
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
         }
         .time-button {
             cursor: pointer;
             color: #ddd;
             font-size: 1.2em;
         }
+
+        /* Raining Effect */
+        .rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Prevent interactions with rain */
+            overflow: hidden;
+        }
+        .drop {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.8);
+            width: 2px;
+            height: 10px;
+            bottom: 100%; /* Start above the screen */
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="rain"></div>
+    
     <div class="container">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3pppwfuUU9qX2tr6u7Jrnz?utm_source=generator&theme=0" width="90%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         
@@ -95,6 +125,20 @@
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
             document.getElementById('current-time').textContent = now.toLocaleString('en-US', options);
         }
+        
+        function createRainDrop() {
+            const rain = document.querySelector('.rain');
+            const drop = document.createElement('div');
+            drop.classList.add('drop');
+            drop.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+            drop.style.animationDuration = Math.random() * 1 + 0.5 + 's'; // Random speed
+            rain.appendChild(drop);
+            drop.addEventListener('animationend', () => {
+                drop.remove(); // Remove the drop after it falls
+            });
+        }
+
+        setInterval(createRainDrop, 150); // Create a new raindrop every 150ms
         setInterval(updateTime, 1000);
         updateTime();
     </script>
