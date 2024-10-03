@@ -91,7 +91,10 @@
         }
 
         @keyframes fall {
-            to {
+            0% {
+                transform: translateY(0) translateX(0);
+            }
+            100% {
                 transform: translateY(100vh) translateX(calc(-50vw + (Math.random() * 100vw))); /* Slide sideways */
             }
         }
@@ -104,7 +107,7 @@
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3pppwfuUU9qX2tr6u7Jrnz?utm_source=generator&theme=0" width="90%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         
         <h1>erdqc</h1>
-        <p>idk I like tech</p>
+        <p>15 y.o beginner dev.</p>
         <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')">
             Loading time...
         </p>
