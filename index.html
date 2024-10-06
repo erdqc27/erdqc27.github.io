@@ -27,31 +27,8 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
-            opacity: 0; /* Initially hidden */
-            transition: opacity 0.5s ease; /* Fade in transition */
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2;
-            backdrop-filter: blur(10px);
+            opacity: 1;
             transition: opacity 0.5s ease;
-        }
-        .overlay h2 {
-            color: #fff;
-            font-size: 2em;
-            animation: fadeIn 0.5s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
         h1 {
             font-family: 'Syne', sans-serif;
@@ -103,19 +80,18 @@
             align-items: center;
             justify-content: center;
         }
-        .side-image {
-            width: 2.5em;
-            height: 2.5em;
-            margin: 0 10px;
+        .next-summer {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5em;
+            color: #fff;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="overlay" id="overlay">
-        <h2>click to enter.</h2>
-    </div>
-    
     <div class="container" id="container">
+        <div class="next-summer" id="next-summer"></div>
+        
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3pppwfuUU9qX2tr6u7Jrnz?utm_source=generator&theme=0" width="90%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         
         <div class="image-container">
@@ -144,20 +120,28 @@
             document.getElementById('current-time').textContent = now.toLocaleString('en-US', options);
         }
 
+        function getNextSummerDate() {
+            const now = new Date();
+            let year = now.getFullYear();
+            const nextSummerStart = new Date(year, 5, 21); // June 21
+
+            // Check if it's already past the summer start date
+            if (now > nextSummerStart) {
+                year += 1; // Move to the next year
+            }
+
+            return nextSummerStart;
+        }
+
+        function updateNextSummer() {
+            const nextSummer = getNextSummerDate();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true };
+            document.getElementById('next-summer').textContent = `Next Summer Time: ${nextSummer.toLocaleString('en-US', options)}`;
+        }
+
         setInterval(updateTime, 1000);
         updateTime();
-
-        document.getElementById('overlay').onclick = function() {
-            const overlay = document.getElementById('overlay');
-            const container = document.getElementById('container');
-            
-            overlay.style.opacity = '0'; // Fade out overlay
-            container.style.opacity = '1'; // Fade in container
-            
-            setTimeout(() => {
-                overlay.style.display = 'none'; // Remove overlay after animation
-            }, 500); // Match duration with the fade-out time
-        };
+        updateNextSummer(); // Call once to display the next summer time
     </script>
 </body>
 </html>
