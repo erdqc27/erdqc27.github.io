@@ -16,7 +16,7 @@
             align-items: center;
             position: relative;
             overflow: hidden;
-            cursor: auto;
+            cursor: auto; /* Normal cursor */
         }
         .container {
             background-color: rgba(0, 0, 0, 0.6);
@@ -27,8 +27,6 @@
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 1;
-            opacity: 1;
-            transition: opacity 0.5s ease;
         }
         h1 {
             font-family: 'Syne', sans-serif;
@@ -57,10 +55,10 @@
             height: 60px;
             margin: 10px;
             box-sizing: border-box;
-            transition: box-shadow 0.3s;
+            transition: box-shadow 0.3s; /* Transition for glow */
         }
         .button:hover {
-            box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.5); /* Glowing effect */
         }
         .instagram, .discord {
             background-color: #FFFFFF;
@@ -80,18 +78,15 @@
             align-items: center;
             justify-content: center;
         }
-        .next-summer {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.5em;
-            color: #fff;
-            margin-bottom: 20px;
+        .side-image {
+            width: 2.5em; /* Adjust size to match text */
+            height: 2.5em; /* Adjust size to match text */
+            margin: 0 10px; /* Space between text and images */
         }
     </style>
 </head>
 <body>
-    <div class="container" id="container">
-        <div class="next-summer" id="next-summer"></div>
-        
+    <div class="container">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3pppwfuUU9qX2tr6u7Jrnz?utm_source=generator&theme=0" width="90%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         
         <div class="image-container">
@@ -120,28 +115,8 @@
             document.getElementById('current-time').textContent = now.toLocaleString('en-US', options);
         }
 
-        function getNextSummerDate() {
-            const now = new Date();
-            let year = now.getFullYear();
-            const nextSummerStart = new Date(year, 5, 21); // June 21
-
-            // Check if it's already past the summer start date
-            if (now > nextSummerStart) {
-                year += 1; // Move to the next year
-            }
-
-            return nextSummerStart;
-        }
-
-        function updateNextSummer() {
-            const nextSummer = getNextSummerDate();
-            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', hour12: true };
-            document.getElementById('next-summer').textContent = `Next Summer Time: ${nextSummer.toLocaleString('en-US', options)}`;
-        }
-
         setInterval(updateTime, 1000);
         updateTime();
-        updateNextSummer(); // Call once to display the next summer time
     </script>
 </body>
 </html>
