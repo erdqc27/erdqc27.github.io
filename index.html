@@ -29,43 +29,20 @@
             border: 10px solid #FFFFFF;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
         }
+        .title-box {
+            background-color: #000000;
+            color: #fff;
+            padding: 10px 20px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 10px 0;
+        }
         h1 {
             font-family: 'Syne', sans-serif;
             font-size: 2.5em;
-            margin: 10px 0;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
+            margin: 0;
         }
-        .sparkle {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: -1;
-        }
-        .sparkle div {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background-color: #fff;
-            border-radius: 50%;
-            opacity: 0;
-            animation: sparkle 1.5s infinite;
-        }
-        @keyframes sparkle {
-            0% { opacity: 0; transform: scale(0.5); }
-            50% { opacity: 1; transform: scale(1); }
-            100% { opacity: 0; transform: scale(0.5); }
-        }
-        .sparkle div:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
-        .sparkle div:nth-child(2) { top: 40%; left: 70%; animation-delay: 0.3s; }
-        .sparkle div:nth-child(3) { top: 70%; left: 50%; animation-delay: 0.6s; }
-        .sparkle div:nth-child(4) { top: 50%; left: 20%; animation-delay: 0.9s; }
-        .sparkle div:nth-child(5) { top: 10%; left: 80%; animation-delay: 1.2s; }
-
         p {
             font-family: 'Syne', sans-serif;
             font-size: 1.2em;
@@ -111,26 +88,14 @@
             color: #ddd;
             font-size: 1.2em;
         }
-        .image-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/3iyKM2AIRRV8ZavN1JxIAC?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         
-        <div class="image-container">
+        <div class="title-box">
             <h1>erdqc 👨‍💻</h1>
-            <div class="sparkle">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
         </div>
         
         <p>loves tech</p>
