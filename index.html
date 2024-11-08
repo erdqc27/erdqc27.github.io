@@ -92,6 +92,11 @@
             font-size: 1em;
             margin-top: 20px;
             color: #ddd;
+            display: flex;
+            align-items: center;
+        }
+        .view-counter img {
+            margin-right: 10px; /* Add space between the icon and text */
         }
     </style>
 </head>
@@ -120,25 +125,33 @@
             </a>
         </div>
 
-        <!-- Display the page view counter -->
-        <p class="view-counter" id="view-counter">Page Views: 0</p>
+        <!-- Display the page view counter with icon to the left -->
+        <p class="view-counter">
+            <img src="https://i.imgur.com/zwSL4wV.png" alt="View Icon" class="icon">Page Views: <span id="view-counter">0</span>
+        </p>
     </div>
 
     <script>
         // Update the view counter
         function updateViewCount() {
-            // Get the current view count from localStorage or set it to 0 if not set
-            let viewCount = localStorage.getItem('viewCount');
-            if (!viewCount) {
-                viewCount = 0;
-            }
-            viewCount++;
+            // Check if the user has visited before in this session
+            if (!sessionStorage.getItem('hasVisited')) {
+                // If this is the first visit in this session, increment the view count
+                let viewCount = localStorage.getItem('viewCount');
+                if (!viewCount) {
+                    viewCount = 0;
+                }
+                viewCount++;
 
-            // Update the view count in localStorage
-            localStorage.setItem('viewCount', viewCount);
+                // Update the view count in localStorage
+                localStorage.setItem('viewCount', viewCount);
+
+                // Mark the session as visited
+                sessionStorage.setItem('hasVisited', 'true');
+            }
 
             // Update the view counter on the page
-            document.getElementById('view-counter').textContent = "Page Views: " + viewCount;
+            document.getElementById('view-counter').textContent = localStorage.getItem('viewCount');
         }
 
         // Call the function to update the view counter
