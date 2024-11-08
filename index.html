@@ -27,7 +27,8 @@
             z-index: 1;
             border-radius: 20px;
             border: 10px solid #FFFFFF;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Fully opaque shadow */
+            opacity: 1; /* Increased opacity to 100% */
         }
         h1 {
             font-family: 'Inter', sans-serif;
@@ -55,6 +56,7 @@
             margin: 10px;
             box-sizing: border-box;
             transition: box-shadow 0.3s;
+            opacity: 1; /* Increased opacity to 100% */
         }
         .discord {
             background-color: #5865F2;
@@ -86,7 +88,6 @@
     <div class="container">
         <!-- Replaced the Spotify embed with the banner image -->
         <img src="https://imgur.com/UFpdMhB.jpg" alt="Banner" style="width: 100%; max-width: 800px; height: 250px; object-fit: cover; border-radius: 20px;">
-
 
         <!-- Centered the "erdqc" text without the icon -->
         <h1>erdqc 👨‍💻</h1>
