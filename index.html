@@ -9,7 +9,7 @@
     <style>
         body {
             margin: 0;
-            background-color: #000000; /* Set background color to black */
+            background-color: #000000;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -17,16 +17,16 @@
             position: relative;
         }
         .container {
-            background-color: #000000; /* Set container background to black */
-            padding: 20px 30px; /* Reduced padding */
-            text-align: center; /* Center the text */
-            max-width: 60%; /* Adjusted container width to be smaller */
+            background-color: #000000;
+            padding: 20px 30px;
+            text-align: center;
+            max-width: 60%;
             position: relative;
             z-index: 1;
             border-radius: 20px;
-            border: 6px solid #FFFFFF; /* Increased border width for a bolder look */
-            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1); /* White border glow with full opacity */
-            opacity: 1; /* Full opacity */
+            border: 6px solid #FFFFFF;
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1);
+            opacity: 1;
         }
         h1 {
             font-family: 'Inter', sans-serif;
@@ -54,11 +54,11 @@
             margin: 10px;
             box-sizing: border-box;
             transition: background-color 0.3s;
-            opacity: 1; /* Full opacity */
-            border: 4px solid #FFFFFF; /* Increased border width to 4px */
+            opacity: 1;
+            border: 4px solid #FFFFFF;
         }
         .discord {
-            background-color: #5865F2; /* Discord color */
+            background-color: #5865F2;
             color: #FFFFFF;
         }
         .instagram {
@@ -78,15 +78,16 @@
         /* New styles for the Discord Presence Embed (iframe) */
         .presence-embed {
             border-radius: 20px;
-            margin-right: 20px;
-            max-width: 340px;
-            height: 192px;
+            width: 100%;
+            max-width: 600px; /* Match the banner size */
+            height: 200px; /* Match the banner size */
         }
-        /* Ensuring content stays in row layout */
+        /* Flex container to display the banner and iframe side by side */
         .content-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 20px; /* Add space between banner and iframe */
         }
     </style>
 </head>
@@ -97,8 +98,6 @@
             <a href="https://discord.com/users/1066293478365089792">
                 <iframe
                     title="Discord user embed"
-                    width="340"
-                    height="192"
                     frameborder="0"
                     sandbox="allow-scripts"
                     src="https://widgets.vendicated.dev/user?id=1066293478365089792&theme=dark&banner=true&full-banner=true&rounded-corners=true&discord-icon=true&badges=true&guess-nitro=true&"
