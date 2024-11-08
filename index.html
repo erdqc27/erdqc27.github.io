@@ -22,8 +22,8 @@
         .container {
             background-color: #000000;
             padding: 20px 50px;
-            text-align: center;
-            max-width: 90%;
+            text-align: center; /* Center the text */
+            max-width: 80%; /* Adjust container width */
             position: relative;
             z-index: 1;
             border-radius: 20px;
@@ -35,14 +35,6 @@
             font-size: 2.5em;
             margin: 0;
             color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start; /* Align text and icon to the left */
-        }
-        h1 img {
-            width: 30px;
-            height: auto;
-            margin-right: 10px; /* Space between icon and text */
         }
         p {
             font-family: 'Inter', sans-serif;
@@ -94,12 +86,10 @@
 <body>
     <div class="container">
         <!-- Replaced the Spotify embed with the banner image -->
-        <img src="https://imgur.com/UFpdMhB.jpg" alt="Banner" style="width: 80%; border-radius: 12px;">
+        <img src="https://imgur.com/UFpdMhB.jpg" alt="Banner" style="width: 100%; max-width: 600px; border-radius: 12px;">
 
-        <!-- Added icon to the left of text -->
-        <h1>
-            <img src="https://imgur.com/6949TEo.png" alt="Icon">erdqc 👨‍💻
-        </h1>
+        <!-- Centered the "erdqc" text without the icon -->
+        <h1>erdqc 👨‍💻</h1>
         
         <p>loves tech</p>
         <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')">
