@@ -20,7 +20,7 @@
             background-color: #000000;
             padding: 20px 30px;
             text-align: center;
-            max-width: 90%;
+            max-width: 80%;
             position: relative;
             z-index: 1;
             border-radius: 20px;
@@ -80,57 +80,39 @@
             border-radius: 20px;
             width: 340px;  /* Fixed width */
             height: 192px; /* Fixed height */
-        }
-        /* Flex container to display the banner and iframe side by side */
-        .content-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px; /* Add space between banner and iframe */
-        }
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            margin-bottom: 20px; /* Space below the embed */
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="content-wrapper">
-            <!-- Discord Presence Embed (iframe) on the left -->
-            <a href="https://discord.com/users/1066293478365089792">
-                <iframe
-                    title="Discord user embed"
-                    frameborder="0"
-                    sandbox="allow-scripts"
-                    src="https://widgets.vendicated.dev/user?id=1066293478365089792&theme=dark&banner=true&full-banner=true&rounded-corners=true&discord-icon=true&badges=true&guess-nitro=true&"
-                    class="presence-embed"
-                ></iframe>
-            </a>
+        <!-- Discord Presence Embed (iframe) above the "erdqc" text -->
+        <iframe
+            title="Discord user embed"
+            width="340"
+            height="192"
+            frameborder="0"
+            sandbox="allow-scripts"
+            src="https://widgets.vendicated.dev/user?id=1066293478365089792&theme=dark&banner=true&full-banner=true&rounded-corners=true&discord-icon=true&badges=true&guess-nitro=true&"
+            class="presence-embed"
+        ></iframe>
 
-            <!-- Main content on the right -->
-            <div class="main-content">
-                <!-- Replaced the old banner with the new GIF -->
-                <img src="https://i.imgur.com/vymuxVE.gif" alt="Banner" style="width: 100%; max-width: 600px; height: 200px; object-fit: cover; border-radius: 20px;">
+        <div class="main-content">
+            <!-- Centered the "erdqc" text without the icon -->
+            <h1>erdqc 👨‍💻</h1>
 
-                <!-- Centered the "erdqc" text without the icon -->
-                <h1>erdqc 👨‍💻</h1>
+            <p>loves tech</p>
+            <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')">
+                Loading time...
+            </p>
 
-                <p>loves tech</p>
-                <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')">
-                    Loading time...
-                </p>
-
-                <div style="display: flex; justify-content: center; width: 100%;">
-                    <a href="https://discord.gg/AffrBjs8h7" class="button discord">
-                        <img src="https://static-00.iconduck.com/assets.00/discord-icon-2048x1570-y371emu6.png" class="icon">Discord
-                    </a>
-                    <a href="https://www.instagram.com/erdqc99/" class="button instagram">
-                        <img src="https://i.imgur.com/oyRmIH7.png" class="icon">Instagram
-                    </a>
-                </div>
+            <div style="display: flex; justify-content: center; width: 100%;">
+                <a href="https://discord.gg/AffrBjs8h7" class="button discord">
+                    <img src="https://static-00.iconduck.com/assets.00/discord-icon-2048x1570-y371emu6.png" class="icon">Discord
+                </a>
+                <a href="https://www.instagram.com/erdqc99/" class="button instagram">
+                    <img src="https://i.imgur.com/oyRmIH7.png" class="icon">Instagram
+                </a>
             </div>
         </div>
     </div>
