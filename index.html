@@ -19,7 +19,7 @@
             cursor: auto;
         }
         .container {
-            background-color: #000000;
+            background-color: #2A2A2A; /* Change background to #2A2A2A */
             padding: 20px 30px; /* Reduced padding */
             text-align: center; /* Center the text */
             max-width: 60%; /* Adjusted container width to be smaller */
@@ -27,8 +27,8 @@
             z-index: 1;
             border-radius: 20px;
             border: 10px solid #FFFFFF;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 1); /* Fully opaque shadow */
-            opacity: 1; /* Increased opacity to 100% */
+            box-shadow: none; /* Removed glow (box-shadow) */
+            opacity: 1; /* Full opacity */
         }
         h1 {
             font-family: 'Inter', sans-serif;
@@ -55,22 +55,19 @@
             height: 70px;
             margin: 10px;
             box-sizing: border-box;
-            transition: box-shadow 0.3s;
-            opacity: 1; /* Increased opacity to 100% */
+            transition: background-color 0.3s;
+            opacity: 1; /* Full opacity */
+            background-color: #2A2A2A; /* Change background to #2A2A2A */
+            border: 2px solid #FFFFFF;
         }
         .discord {
-            background-color: #5865F2;
             color: #FFFFFF;
         }
         .instagram {
-            background: linear-gradient(45deg, #405DE6, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #FCAF45, #FFDC80);
             color: #FFFFFF;
         }
         .button:hover {
-            box-shadow: 0 0 10px rgba(88, 101, 242, 1), 0 0 20px rgba(88, 101, 242, 0.5);
-        }
-        .instagram:hover {
-            box-shadow: 0 0 10px #f3243a, 0 0 20px #f3243a;
+            background-color: #444444; /* Darken background on hover */
         }
         .icon {
             width: 30px;
