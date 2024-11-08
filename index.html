@@ -24,8 +24,8 @@
             position: relative;
             z-index: 1;
             border-radius: 20px;
-            border: 10px solid #FFFFFF;
-            box-shadow: none; /* Removed glow (box-shadow) */
+            border: 3px solid #FFFFFF; /* White border */
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1); /* White border glow with full opacity */
             opacity: 1; /* Full opacity */
         }
         h1 {
@@ -78,19 +78,8 @@
             font-size: 1.2em;
         }
 
-        /* Rectangle with border glow effect at the center */
-        .center-glow-rectangle {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 400px; /* Adjust width of the rectangle */
-            height: 200px; /* Adjust height of the rectangle */
-            background-color: transparent; /* Transparent background */
-            border: 3px solid #FFFFFF; /* White border */
-            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1); /* White border glow with full opacity */
-            transform: translate(-50%, -50%); /* Center the rectangle */
-            z-index: 9999; /* Ensure it's above other elements */
-        }
+        /* Remove the center rectangle - no longer needed */
+        /* The glow border now applies to the container itself */
     </style>
 </head>
 <body>
@@ -115,9 +104,6 @@
             </a>
         </div>
     </div>
-
-    <!-- Center rectangle with border glow -->
-    <div class="center-glow-rectangle"></div>
 
     <script>
         function updateTime() {
