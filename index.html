@@ -79,34 +79,12 @@
             color: #ddd;
             font-size: 1.2em;
         }
-        /* Added positioning for the left icon */
-        .left-icon {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 40px;
-            height: auto;
-        }
-        .view-counter {
-            font-family: 'Inter', sans-serif;
-            font-size: 1em;
-            margin-top: 20px;
-            color: #ddd;
-            display: flex;
-            align-items: center;
-        }
-        .view-counter img {
-            margin-right: 10px; /* Add space between the icon and text */
-        }
     </style>
 </head>
 <body>
-    <!-- Added the icon to the left -->
-    <img src="https://i.imgur.com/zwSL4wV.png" alt="Left Icon" class="left-icon">
-
     <div class="container">
-        <!-- Replaced the Spotify embed with the banner image -->
-        <img src="https://imgur.com/UFpdMhB.jpg" alt="Banner" style="width: 100%; max-width: 800px; height: 250px; object-fit: cover; border-radius: 20px;">
+        <!-- Replaced the Spotify embed with the banner image, resized it -->
+        <img src="https://imgur.com/UFpdMhB.jpg" alt="Banner" style="width: 100%; max-width: 600px; height: 200px; object-fit: cover; border-radius: 20px;">
 
         <!-- Centered the "erdqc" text without the icon -->
         <h1>erdqc 👨‍💻</h1>
@@ -124,39 +102,9 @@
                 <img src="https://i.imgur.com/UB9NZdJ.png" class="icon">Instagram
             </a>
         </div>
-
-        <!-- Display the page view counter with icon to the left -->
-        <p class="view-counter">
-            <img src="https://i.imgur.com/zwSL4wV.png" alt="View Icon" class="icon">Page Views: <span id="view-counter">0</span>
-        </p>
     </div>
 
     <script>
-        // Update the view counter
-        function updateViewCount() {
-            // Check if the user has visited before in this session
-            if (!sessionStorage.getItem('hasVisited')) {
-                // If this is the first visit in this session, increment the view count
-                let viewCount = localStorage.getItem('viewCount');
-                if (!viewCount) {
-                    viewCount = 0;
-                }
-                viewCount++;
-
-                // Update the view count in localStorage
-                localStorage.setItem('viewCount', viewCount);
-
-                // Mark the session as visited
-                sessionStorage.setItem('hasVisited', 'true');
-            }
-
-            // Update the view counter on the page
-            document.getElementById('view-counter').textContent = localStorage.getItem('viewCount');
-        }
-
-        // Call the function to update the view counter
-        updateViewCount();
-
         function updateTime() {
             const now = new Date();
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
