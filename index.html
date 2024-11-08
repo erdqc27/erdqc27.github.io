@@ -75,11 +75,12 @@
             color: #ddd;
             font-size: 1.2em;
         }
-        /* New styles for the Discord Presence Embed */
+        /* New styles for the Discord Presence Embed (iframe) */
         .presence-embed {
             border-radius: 20px;
             margin-right: 20px;
-            max-width: 300px;
+            max-width: 340px;
+            height: 192px;
         }
         /* Ensuring content stays in row layout */
         .content-wrapper {
@@ -92,9 +93,17 @@
 <body>
     <div class="container">
         <div class="content-wrapper">
-            <!-- Discord Presence Embed on the left -->
+            <!-- Discord Presence Embed (iframe) on the left -->
             <a href="https://discord.com/users/1066293478365089792">
-                <img src="https://lanyard.cnrad.dev/api/1066293478365089792" class="presence-embed" alt="Discord Presence">
+                <iframe
+                    title="Discord user embed"
+                    width="340"
+                    height="192"
+                    frameborder="0"
+                    sandbox="allow-scripts"
+                    src="https://widgets.vendicated.dev/user?id=1066293478365089792&theme=dark&banner=true&full-banner=true&rounded-corners=true&discord-icon=true&badges=true&guess-nitro=true&"
+                    class="presence-embed"
+                ></iframe>
             </a>
 
             <!-- Main content on the right -->
