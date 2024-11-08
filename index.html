@@ -79,6 +79,21 @@
             color: #ddd;
             font-size: 1.2em;
         }
+
+        /* Mouse-following glow effect */
+        .mouse-glow {
+            position: absolute;
+            pointer-events: none;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            background-color: rgba(255, 255, 255, 0.7); /* White color with opacity */
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.8); /* White glow */
+            transform: translate(-50%, -50%);
+            transition: all 0.1s ease; /* Smooth transition */
+            z-index: 9999; /* Ensure it appears above all other elements */
+        }
+
     </style>
 </head>
 <body>
@@ -104,7 +119,18 @@
         </div>
     </div>
 
+    <!-- Mouse glow element -->
+    <div class="mouse-glow" id="mouseGlow"></div>
+
     <script>
+        // Function to update the mouse glow position
+        const mouseGlow = document.getElementById('mouseGlow');
+
+        document.addEventListener('mousemove', function(e) {
+            mouseGlow.style.left = `${e.pageX}px`;
+            mouseGlow.style.top = `${e.pageY}px`;
+        });
+
         function updateTime() {
             const now = new Date();
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
