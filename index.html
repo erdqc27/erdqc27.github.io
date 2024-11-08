@@ -15,8 +15,6 @@
             justify-content: center;
             align-items: center;
             position: relative;
-            overflow: hidden;
-            cursor: none; /* Hide the default cursor */
         }
         .container {
             background-color: #2A2A2A; /* Change background to #2A2A2A */
@@ -80,20 +78,19 @@
             font-size: 1.2em;
         }
 
-        /* Rectangle border glow */
-        .mouse-glow {
+        /* Rectangle with border glow effect at the center */
+        .center-glow-rectangle {
             position: absolute;
-            pointer-events: none;
-            width: 200px; /* Adjust rectangle size */
-            height: 80px; /* Adjust rectangle size */
-            border-radius: 15px; /* Rounded corners */
-            border: 2px solid #FFFFFF; /* White border */
-            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1); /* White glow effect */
-            transform: translate(-50%, -50%); /* Center the glow */
-            z-index: 9999; /* Ensure it appears above all other elements */
-            opacity: 1; /* Full opacity */
+            top: 50%;
+            left: 50%;
+            width: 400px; /* Adjust width of the rectangle */
+            height: 200px; /* Adjust height of the rectangle */
+            background-color: transparent; /* Transparent background */
+            border: 3px solid #FFFFFF; /* White border */
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1); /* White border glow with full opacity */
+            transform: translate(-50%, -50%); /* Center the rectangle */
+            z-index: 9999; /* Ensure it's above other elements */
         }
-
     </style>
 </head>
 <body>
@@ -119,18 +116,10 @@
         </div>
     </div>
 
-    <!-- Mouse glow rectangle -->
-    <div class="mouse-glow" id="mouseGlow"></div>
+    <!-- Center rectangle with border glow -->
+    <div class="center-glow-rectangle"></div>
 
     <script>
-        // Function to update the mouse glow position
-        const mouseGlow = document.getElementById('mouseGlow');
-
-        document.addEventListener('mousemove', function(e) {
-            mouseGlow.style.left = `${e.pageX}px`;  // Set position of glow element horizontally
-            mouseGlow.style.top = `${e.pageY}px`;   // Set position of glow element vertically
-        });
-
         function updateTime() {
             const now = new Date();
             const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
