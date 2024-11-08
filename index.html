@@ -80,17 +80,18 @@
             font-size: 1.2em;
         }
 
-        /* Add cursor motion blur effect */
-        .cursor {
+        /* Rectangle border glow */
+        .mouse-glow {
             position: absolute;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: #fff;
             pointer-events: none;
-            will-change: transform;
-            filter: blur(8px);
-            transition: transform 0.1s ease;
+            width: 200px; /* Adjust rectangle size */
+            height: 80px; /* Adjust rectangle size */
+            border-radius: 15px; /* Rounded corners */
+            border: 2px solid #FFFFFF; /* White border */
+            box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1); /* White glow effect */
+            transform: translate(-50%, -50%); /* Center the glow */
+            z-index: 9999; /* Ensure it appears above all other elements */
+            opacity: 1; /* Full opacity */
         }
 
     </style>
@@ -118,16 +119,16 @@
         </div>
     </div>
 
-    <!-- Custom cursor element -->
-    <div class="cursor" id="cursor"></div>
+    <!-- Mouse glow rectangle -->
+    <div class="mouse-glow" id="mouseGlow"></div>
 
     <script>
-        // Function to update the mouse position and apply blur
-        const cursor = document.getElementById('cursor');
+        // Function to update the mouse glow position
+        const mouseGlow = document.getElementById('mouseGlow');
 
         document.addEventListener('mousemove', function(e) {
-            cursor.style.left = `${e.pageX - 10}px`; // Offset to center the cursor
-            cursor.style.top = `${e.pageY - 10}px`;  // Offset to center the cursor
+            mouseGlow.style.left = `${e.pageX}px`;  // Set position of glow element horizontally
+            mouseGlow.style.top = `${e.pageY}px`;   // Set position of glow element vertically
         });
 
         function updateTime() {
