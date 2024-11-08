@@ -65,16 +65,6 @@
             background: linear-gradient(135deg, #4564dc, #aa2cc0, #ec0075, #ff6903, #ffd366);
             color: #FFFFFF;
         }
-        /* Removed the hover effects */
-        /* .discord:hover {
-            background-color: #4752c4; 
-        }
-        .instagram:hover {
-            background: linear-gradient(135deg, #3c57cc, #9f23b1, #e1006c, #e65d01, #e5c15d); 
-        } */
-        /* .button:hover {
-            background-color: #444444; 
-        } */
         .icon {
             width: 30px;
             height: auto;
@@ -85,28 +75,50 @@
             color: #ddd;
             font-size: 1.2em;
         }
+        /* New styles for the Discord Presence Embed */
+        .presence-embed {
+            border-radius: 20px;
+            margin-right: 20px;
+            max-width: 300px;
+        }
+        /* Ensuring content stays in row layout */
+        .content-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Replaced the old banner with the new GIF -->
-        <img src="https://i.imgur.com/vymuxVE.gif" alt="Banner" style="width: 100%; max-width: 600px; height: 200px; object-fit: cover; border-radius: 20px;">
-
-        <!-- Centered the "erdqc" text without the icon -->
-        <h1>erdqc 👨‍💻</h1>
-        
-        <p>loves tech</p>
-        <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')">
-            Loading time...
-        </p>
-
-        <div style="display: flex; justify-content: center; width: 100%;">
-            <a href="https://discord.gg/AffrBjs8h7" class="button discord">
-                <img src="https://static-00.iconduck.com/assets.00/discord-icon-2048x1570-y371emu6.png" class="icon">Discord
+        <div class="content-wrapper">
+            <!-- Discord Presence Embed on the left -->
+            <a href="https://discord.com/users/1066293478365089792">
+                <img src="https://lanyard.cnrad.dev/api/1066293478365089792" class="presence-embed" alt="Discord Presence">
             </a>
-            <a href="https://www.instagram.com/erdqc99/" class="button instagram">
-                <img src="https://i.imgur.com/oyRmIH7.png" class="icon">Instagram
-            </a>
+
+            <!-- Main content on the right -->
+            <div>
+                <!-- Replaced the old banner with the new GIF -->
+                <img src="https://i.imgur.com/vymuxVE.gif" alt="Banner" style="width: 100%; max-width: 600px; height: 200px; object-fit: cover; border-radius: 20px;">
+
+                <!-- Centered the "erdqc" text without the icon -->
+                <h1>erdqc 👨‍💻</h1>
+
+                <p>loves tech</p>
+                <p id="current-time" class="time-button" onclick="window.open('https://time.is/', '_blank')">
+                    Loading time...
+                </p>
+
+                <div style="display: flex; justify-content: center; width: 100%;">
+                    <a href="https://discord.gg/AffrBjs8h7" class="button discord">
+                        <img src="https://static-00.iconduck.com/assets.00/discord-icon-2048x1570-y371emu6.png" class="icon">Discord
+                    </a>
+                    <a href="https://www.instagram.com/erdqc99/" class="button instagram">
+                        <img src="https://i.imgur.com/oyRmIH7.png" class="icon">Instagram
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
