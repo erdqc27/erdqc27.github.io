@@ -15,6 +15,7 @@
             justify-content: center;
             align-items: center;
             position: relative;
+            overflow: hidden;
         }
         .container {
             background-color: #000000;
@@ -82,9 +83,23 @@
             height: 192px; /* Fixed height */
             margin-bottom: 20px; /* Space below the embed */
         }
+        /* New styles for the second Discord widget */
+        .discord-widget {
+            position: fixed;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            margin-left: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+            z-index: 2; /* Ensure it's not hidden behind other elements */
+        }
     </style>
 </head>
 <body>
+    <!-- Discord Widget (left of the screen) -->
+    <iframe src="https://discord.com/widget?id=1275730214088867871&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" class="discord-widget"></iframe>
+
     <div class="container">
         <!-- Discord Presence Embed (iframe) above the "erdqc" text -->
         <iframe
