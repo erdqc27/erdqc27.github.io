@@ -28,6 +28,8 @@
             border: 6px solid #FFFFFF;
             box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1);
             opacity: 1;
+            width: 80%; /* Adjust width to match the 80% max-width */
+            height: 90vh; /* Set the height to 90% of the viewport height */
         }
         h1 {
             font-family: 'Inter', sans-serif;
@@ -92,13 +94,15 @@
             margin-left: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
-            z-index: 2; /* Ensure it's not hidden behind other elements */
+            z-index: 2;
+            width: 80%;  /* Match width to the container */
+            height: 90vh;  /* Match height to the container */
         }
     </style>
 </head>
 <body>
     <!-- Discord Widget (left of the screen) -->
-    <iframe src="https://discord.com/widget?id=1275730214088867871&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts" class="discord-widget"></iframe>
+    <iframe src="https://discord.com/widget?id=1275730214088867871&theme=dark" class="discord-widget" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
 
     <div class="container">
         <!-- Discord Presence Embed (iframe) above the "erdqc" text -->
