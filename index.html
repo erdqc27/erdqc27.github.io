@@ -26,7 +26,6 @@
             z-index: 1;
             border-radius: 20px;
             border: 6px solid #FFFFFF;
-            /* Removed the box-shadow for no glow */
             opacity: 1;
         }
         h1 {
@@ -76,14 +75,26 @@
             color: #ddd;
             font-size: 1.2em;
         }
-        /* Updated styles for the Discord Presence Embed (removed glow) */
         .presence-embed {
             border-radius: 20px;
-            width: 340px;  /* Fixed width */
-            height: 192px; /* Fixed height */
-            margin-bottom: 20px; /* Space below the embed */
-            border: 6px solid #FFFFFF; /* Same border thickness as the container */
-            /* Removed the box-shadow for no glow */
+            width: 340px;
+            height: 192px;
+            margin-bottom: 20px;
+            border: 6px solid #FFFFFF;
+        }
+        /* Container for Nitro icon */
+        .nitro-icon-container {
+            position: absolute;
+            top: 20px; /* Adjust this to match the position of the Discord icon */
+            left: 15px; /* Adjust this to align next to the Discord icon */
+            z-index: 2;
+            display: flex;
+            align-items: center;
+        }
+        .nitro-icon {
+            width: 40px;
+            height: auto;
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -91,18 +102,23 @@
 
     <div class="container">
         <!-- Discord Presence Embed (iframe) above the "erdqc" text -->
-        <iframe
-            title="Discord user embed"
-            width="340"
-            height="192"
-            frameborder="0"
-            sandbox="allow-scripts"
-            src="https://widgets.vendicated.dev/user?id=1066293478365089792&theme=dark&banner=true&full-banner=true&rounded-corners=true&discord-icon=true&badges=true&guess-nitro=true&"
-            class="presence-embed"
-        ></iframe>
+        <div style="position: relative;">
+            <iframe
+                title="Discord user embed"
+                width="340"
+                height="192"
+                frameborder="0"
+                sandbox="allow-scripts"
+                src="https://widgets.vendicated.dev/user?id=1066293478365089792&theme=dark&banner=true&full-banner=true&rounded-corners=true&discord-icon=true&badges=true&guess-nitro=true&"
+                class="presence-embed"
+            ></iframe>
+            <!-- Nitro icon next to the HypeSquad Brilliance icon -->
+            <div class="nitro-icon-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/58/Discord_Nitro_icon_2020.svg" class="nitro-icon" alt="Discord Nitro">
+            </div>
+        </div>
 
         <div class="main-content">
-            <!-- Centered the "erdqc" text without the icon -->
             <h1>erdqc 👨‍💻</h1>
 
             <p>loves tech</p>
